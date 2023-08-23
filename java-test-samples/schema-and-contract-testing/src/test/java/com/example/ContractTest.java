@@ -5,9 +5,10 @@ import java.io.IOException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import com.example.sdk.BaseJsonSchemaValidator;
 import com.fasterxml.jackson.databind.JsonNode;
 
-public class ContractTest extends BaseJsonSchemaValidatorTest {
+public class ContractTest extends BaseJsonSchemaValidator {
 
     @Test
     public void testAddressHasFourFields() throws IOException{

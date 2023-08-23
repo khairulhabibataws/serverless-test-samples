@@ -6,6 +6,7 @@ import java.util.Set;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import com.example.sdk.BaseJsonSchemaValidator;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.networknt.schema.JsonSchema;
 import com.networknt.schema.ValidationMessage;
@@ -13,7 +14,7 @@ import com.networknt.schema.ValidationMessage;
 /**
  * Unit test for simple App.
  */
-public class SchemaTest extends BaseJsonSchemaValidatorTest
+public class SchemaTest extends BaseJsonSchemaValidator
 {
     @Test
     public void addAdditionalOptionalAttribute() throws IOException

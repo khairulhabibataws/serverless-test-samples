@@ -1,4 +1,4 @@
-package com.example;
+package com.example.sdk;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,7 +12,7 @@ import com.networknt.schema.JsonSchema;
 import com.networknt.schema.JsonSchemaFactory;
 import com.networknt.schema.SpecVersion;
 
-public class BaseJsonSchemaValidatorTest {
+public class BaseJsonSchemaValidator {
 
     private ObjectMapper mapper = new ObjectMapper();
 
