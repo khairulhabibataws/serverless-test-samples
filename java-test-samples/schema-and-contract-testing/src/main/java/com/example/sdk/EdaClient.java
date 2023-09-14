@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Set;
 
+import com.example.CustomerValidator;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.networknt.schema.JsonSchema;
 import com.networknt.schema.ValidationMessage;
@@ -21,6 +22,8 @@ public class EdaClient extends BaseJsonSchemaValidator{
     private String product;
     private String action;
     private String targetSchemaUrl;
+
+    private CustomerValidator validator;
 
     public EdaClient(String product, String action, String targetSchemaUrl){
         this.product = product;
@@ -56,8 +59,10 @@ public class EdaClient extends BaseJsonSchemaValidator{
                     .bucket(product + "-" + action + "-mkhabib")
                     .key(action + currentDT.format(timeformat) + ".json")
                     .build();
-
+            validator.isValidAddress(payload);
             RequestBody requestBody = RequestBody.fromString(payload.asText());
+
+
             // send with s3 client
             s3.putObject(objectRequest, requestBody);
             s3.close();
